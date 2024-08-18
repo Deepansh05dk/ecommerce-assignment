@@ -61,7 +61,7 @@ const Summary = () => {
   const handleDiscount = () => {
     const currentDiscount = discounts.find((discount) => discount.code === discountCode) || null
     if (!currentDiscount) {
-      toast.error("Discount coupon not valid")
+      return toast.error("Discount coupon not valid")
     }
     toast.success("Discount applied successfully")
     setDiscount(currentDiscount)

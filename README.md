@@ -1,36 +1,107 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next.js E-commerce Project
+
+## Overview
+
+This project is a modern e-commerce application built with Next.js, showcasing a range of features and best practices in web development. It demonstrates proficiency in full-stack development, state management, and database integration.
+
+## Key Features
+
+- **Product Listing**: Display products in a responsive grid layout.
+- **Shopping Cart**: Add/remove items, adjust quantities, with real-time updates.
+- **Persistent Cart**: Cart data is stored in the Local storage.
+- **Server Actions**: Utilize Next.js server actions for efficient data fetching and mutations.
+- **Database Integration**: PostgreSQL with Prisma ORM for robust data management.
+- **State Management**: Zustand for client-side state management.
+- **Responsive Design**: Mobile-friendly UI using Tailwind CSS and Shadcn UI.
+
+## Tech Stack
+
+- **Frontend**: Next.js, React, Tailwind CSS, Shadcn UI
+- **Backend**: Next.js API Routes, Server Actions
+- **Database**: PostgreSQL
+- **ORM**: Prisma
+- **State Management**: Zustand
+- **Styling**: Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+1. Clone the repository:
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   ```
+   git clone https://github.com/Deepansh05dk/ecommerce-assignment.git
+   ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```
+   cd your-repo-name
+   npm install
+   ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+3. Set up your environment variables:
+   Create a `.env` file in the root directory and add the following:
 
-## Learn More
+   ```
+   DATABASE_URL="your_postgresql_connection_string"
+   ```
 
-To learn more about Next.js, take a look at the following resources:
+4. Set up the database:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+   ```
+   npx prisma migrate dev
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+5. Run the development server:
 
-## Deploy on Vercel
+   ```
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser to see the result.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Project Structure
+
+- `/app`: Next.js app router pages and layouts
+- `/components`: Reusable React components
+- `/lib`: Utility functions and shared logic
+- `/prisma`: Prisma schema and migrations
+- `/public`: Static assets
+- `/hooks`: Zustand store configurations in form of hooks
+
+## Key Implementations
+
+### Cart Management
+
+- **Users**: Cart data is stored in local storage for a seamless experience.
+
+### Database Schema
+
+Utilizes Prisma ORM with the following main models:
+
+- User
+- Product
+- Cart
+- CartItem
+
+### Server Actions
+
+Leverages Next.js server actions for efficient server-side operations, including:
+
+- Fetching product data
+- Managing cart operations (add, remove, update quantities)
+
+## Future Enhancements
+
+- Implement checkout process
+- Add user authentication and store cart on database(better approach)
+- Add product categories and search functionality
+- Introduce user reviews and ratings
+- Develop an admin panel for product management
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+## License
+
+This project is licensed under the MIT License.

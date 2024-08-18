@@ -1,12 +1,12 @@
 import Container from "@/components/ui/container";
 import Billboard from "./_components/billboard";
 import ProductList from "./_components/product/product-list";
-import { Product } from "@/types";
+import { ProductType } from "@/types";
 import { fetchProducts } from "@/actions/get-products";
 
 
 export default async function HomePage() {
-  const products: Product[] = await fetchProducts()
+  const products: ProductType[] = await fetchProducts()
   return (
     <Container>
       <div className="pb-10 space-y-10">

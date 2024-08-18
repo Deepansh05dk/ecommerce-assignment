@@ -38,7 +38,7 @@ const Summary = () => {
   const [discount, setDiscount] = useState<Discount | null>(null)
 
   const totalPrice = items.reduce(
-    (total, item) => total + Number(item.price),
+    (total, item) => total + Number(item.price) * item.quantity,
     0
   );
   let discountedPrice = totalPrice

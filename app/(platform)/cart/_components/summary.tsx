@@ -80,7 +80,7 @@ const Summary = () => {
             <Input type="text" onChange={(e) => setDiscountCode(e.target.value)} placeholder="APPLY10 (To get 10% off)" />
             <Button disabled={items.length === 0} onClick={handleDiscount} type="submit">Apply</Button>
           </div>
-          {discount && <Currency value={-(totalPrice - discountedPrice)} />}
+          {totalPrice && discount && <Currency value={-(totalPrice - discountedPrice)} />}
         </div>
         <div className="flex items-center justify-between pt-4 border-t border-gray-200">
           <div className="text-base font-medium text-gray-400">Total price (including discounts)</div>
